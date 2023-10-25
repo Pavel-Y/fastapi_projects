@@ -1,0 +1,37 @@
+<head>
+</head>
+<body>
+    <div id="content">
+    <h3>Type anything:</h3>
+    <p>
+    <form action="." method="POST">
+        <input type="text" name="anything" placeholder="Type anything here">
+        <input id="submit_button" type="submit" name="anything_submit" value="Submit" onclick="loading();">
+    </form>
+    </p>
+    </div>
+    <div id="loading" style="display:none;">
+    </div> 
+</body>
+<script type="text/javascript">// <![CDATA[
+        function loading(){
+            var startTime = new Date().getTime();  // Set the moment we're counting from
+            
+            var x = setInterval(function() {
+              var now = new Date().getTime();
+              var distance = now - startTime;
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              var intro = "Please wait...&nbsp;&nbsp;&nbsp;"
+              document.getElementById("loading").innerHTML = intro + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+            }, 1000);
+            
+            $("#loading").show();
+            $("#submit_button").hide();
+        }
+// ]]>
+</script>
+
+
+<script src="/static/jquery.min.js">
+</script>
