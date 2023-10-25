@@ -5,7 +5,15 @@
     <h3>Type anything:</h3>
     <p>
     <form action="." method="POST">
-        <input type="text" name="anything" placeholder="Type anything here">
+        <table><tr>
+        <td>Anything</td><td><input id="anything" type="text" name="anything" placeholder="Type anything here"></td></tr><tr>
+        <td>Dropdown</td><td><select id="show_number" name="show_number" onChange="toggleNumber();">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select></td></tr><tr id="tr_anumber">
+        <td>A number</td><td><input id="anumber" type="number" name="anumber" placeholder="Any number here"></td></tr>
+        </table>
+        <p>
         <input id="submit_button" type="submit" name="anything_submit" value="Submit" onclick="loading();">
     </form>
     </p>
@@ -28,6 +36,15 @@
             
             $("#loading").show();
             $("#submit_button").hide();
+        }
+
+        function toggleNumber(){
+            var val = document.getElementById("show_number").value;
+            if (val === "yes") {
+                $("#tr_anumber").show();
+            } else {
+                $("#tr_anumber").hide();
+            }
         }
 // ]]>
 </script>

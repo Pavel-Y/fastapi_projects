@@ -5,9 +5,9 @@ import time
 
 app = Flask(__name__)
 
-def long_load(typeback):
+def long_load(query, dropdown, anumber):
     time.sleep(10) #just simulating the waiting period
-    return "You typed: %s" % typeback
+    return f"You typed: {query}, {dropdown}, {anumber}"
 
 @app.route('/')
 def home():
@@ -16,7 +16,9 @@ def home():
 @app.route('/', methods=['POST'])
 def form(display=None):
     query = request.form['anything']
-    outcome = long_load(query)
+    dropdown = request.form['show_number']
+    anumber = request.form['anumber']
+    outcome = long_load(query, dropdown, anumber)
     return render_template("done.html", display=outcome)
 
 if __name__ == '__main__':
