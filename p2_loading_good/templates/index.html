@@ -5,13 +5,14 @@
     <h3>Type anything:</h3>
     <p>
     <form action="." method="POST">
-        <table><tr>
-        <td>Anything</td><td><input id="anything" type="text" name="anything" placeholder="Type anything here"></td></tr><tr>
-        <td>Dropdown</td><td><select id="show_number" name="show_number" onChange="toggleNumber();">
+        <table>
+        <tr><td>Anything</td><td><input id="anything" type="text" name="anything" placeholder="Type anything here"></td></tr>
+        <tr><td>Dropdown</td><td><select id="show_number" name="show_number" onChange="toggleNumber();">
             <option value="yes">yes</option>
             <option value="no">no</option>
-        </select></td></tr><tr id="tr_anumber">
-        <td>A number</td><td><input id="anumber" type="number" name="anumber" placeholder="Any number here"></td></tr>
+        </select></td></tr>
+        <tr id="tr_anumber"><td>A number</td><td><input id="anumber" type="number" name="anumber" placeholder="Any number here"></td></tr>
+        <tr><td>Mail to</td><td><textarea id="mail_to" name="mail_to" placeholder="Comma separated list"></textarea></td></tr>
         </table>
         <p>
         <input id="submit_button" type="submit" name="anything_submit" value="Submit" onclick="loading();">
